@@ -3,13 +3,13 @@ package org.aubm.aubertma.service;
 import org.aubm.aubertma.entity.Customer;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CustomerService {
 
-    private List<Customer> customerList= Collections.emptyList();
+    private List<Customer> customerList= new ArrayList<>();
 
     public List<Customer> getCustomers(){
 
