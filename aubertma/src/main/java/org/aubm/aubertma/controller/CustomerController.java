@@ -3,7 +3,6 @@ package org.aubm.aubertma.controller;
 import org.aubm.aubertma.entity.Customer;
 import org.aubm.aubertma.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,8 +35,8 @@ public class CustomerController {
         customerService.updateCustomer(id,customer);
         System.out.println("client à jour");
     }
-    @DeleteMapping
-    public void deleteCustomer(int id){
+    @DeleteMapping({"/{id}"})
+    public void deleteCustomer(@PathVariable int id){
         customerService.removeCustomer(id);
         System.out.println("suppression du client");
     }

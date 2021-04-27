@@ -1,7 +1,10 @@
 package org.aubm.aubertma.service;
 
+import org.aubm.aubertma.entity.City;
 import org.aubm.aubertma.entity.Customer;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +30,16 @@ public class CustomerService {
     }
 
     public void addCustomer(Customer newCustomer){
+        newCustomer.setCity(getCity(newCustomer.getCodeINSEE()));
         customerList.add(newCustomer);
+    }
+
+    public City getCity(String code){
+
+        RestTemplate restTemplate = new RestTemplate();
+       City response
+                = restTemplate.getForObject("https://geo.api.gouv.fr/communes/"+code+"?fields=nom,&format=json&geometry=centre", City.class);
+        return response;
     }
 
     public void updateCustomer (int id, Customer newCustomer){
