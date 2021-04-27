@@ -23,7 +23,7 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getCustomers(), HttpStatus.OK);
     }
     @GetMapping({"/{id}"})
-    public ResponseEntity<Customer> getCustomerById(int id){
+    public ResponseEntity<Customer> getCustomerById(@PathVariable int id){
         return new ResponseEntity<>(customerService.getCustomerById(id),HttpStatus.OK);
     }
     @PostMapping
@@ -32,6 +32,11 @@ public class CustomerController {
         System.out.println("ajout d'un nouveau client" + newCustomer.getName());
     }
 
+    @PutMapping({"/{id}"})
+    public void updateCustomer(@PathVariable int id, @RequestBody Customer customer){
+        customerService.updateCustomer(id,customer);
+        System.out.println("client à jour");
+    }
     @DeleteMapping
     public void deleteCustomer(int id){
         customerService.removeCustomer(id);
