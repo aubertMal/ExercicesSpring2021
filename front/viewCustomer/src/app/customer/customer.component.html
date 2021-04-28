@@ -3,8 +3,10 @@
       <div class="col-xs-12">
         <h2>Mes clients</h2>
         <ul class="list-group">
-            <app-customer  *ngFor="let customer of customers"
-                           customer></app-customer>
+            <li  *ngFor="let customer of customers">
+                           {{customer.name}}
+                        
+            </li>
           </ul>
         <button class="btn btn-success">Ajouter un client</button>
       </div>

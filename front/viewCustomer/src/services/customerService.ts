@@ -11,4 +11,8 @@ export class CustomerService{
             code : 37200
         }
     ];
+
+    getCustomers(){
+        
+    }
 }
