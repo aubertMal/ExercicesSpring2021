@@ -4,6 +4,7 @@ import org.aubm.aubertma.entity.City;
 import org.aubm.aubertma.entity.Customer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -30,7 +31,11 @@ public class CustomerService {
     }
 
     public void addCustomer(Customer newCustomer){
-        newCustomer.setCity(getCity(newCustomer.getCodeINSEE()).getNom());
+        try {
+            newCustomer.setCity(getCity(newCustomer.getCodeINSEE()).getNom());
+        } catch (RestClientException e){
+            System.out.println("La recherche n'a pas abouti!");
+        }
         customerList.add(newCustomer);
     }
 
@@ -45,8 +50,16 @@ public class CustomerService {
     public void updateCustomer (int id, Customer newCustomer){
         for (Customer custom:
                 customerList) {
-            if (custom.getId()==id)
+            if (custom.getId()==id) {
                 custom.setName(newCustomer.getName());
+                if (!newCustomer.getCodeINSEE().equals(custom.getCodeINSEE())) {
+                    try {
+                        custom.setCity(getCity(newCustomer.getCodeINSEE()).getNom());
+                    } catch (RestClientException e){
+                        System.out.println("La recherche n'a pas abouti!");
+                    }
+                }
+            }
         }
     }
 
