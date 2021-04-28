@@ -4,7 +4,7 @@ public class Customer {
     private int id;
     private String name;
     private String codeINSEE;
-    private City city;
+    private String city;
 
     public Customer(int id, String name, String code) {
         this.id = id;
@@ -12,11 +12,11 @@ public class Customer {
         codeINSEE = code;
     }
 
-    public void setCity(City city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    public City getCity() {
+    public String getCity() {
         return city;
     }
 

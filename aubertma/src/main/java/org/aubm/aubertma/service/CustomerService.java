@@ -30,7 +30,7 @@ public class CustomerService {
     }
 
     public void addCustomer(Customer newCustomer){
-        newCustomer.setCity(getCity(newCustomer.getCodeINSEE()));
+        newCustomer.setCity(getCity(newCustomer.getCodeINSEE()).getNom());
         customerList.add(newCustomer);
     }
 
