@@ -11,11 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customers")
+
 public class CustomerController {
 
     @Autowired
     CustomerService customerService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers(){
         return new ResponseEntity<>(customerService.getCustomers(), HttpStatus.OK);

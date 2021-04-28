@@ -2,7 +2,6 @@ package org.aubm.aubertma.service;
 
 import org.aubm.aubertma.entity.City;
 import org.aubm.aubertma.entity.Customer;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
