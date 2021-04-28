@@ -14,11 +14,7 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {
-    this.customer = this.customerService.customer;
-  }
 
-  addCustomer(): void {
-    this.customerService.addCustomer();
   }
 
   viewCustomers(): void {

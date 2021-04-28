@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed77654a-1aa5-44c4-bec1-924d4c96ce11" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/viewCustomer/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/viewCustomer/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/viewCustomer/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/viewCustomer/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/viewCustomer/src/app/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/viewCustomer/src/app/customer/customer.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/viewCustomer/src/app/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/viewCustomer/src/app/customer/customer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/viewCustomer/src/services/customerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front/viewCustomer/src/services/customerService.ts" afterDir="false" />
     </list>

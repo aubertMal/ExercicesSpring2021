@@ -26,6 +26,7 @@ public class CustomerController {
     public ResponseEntity<Customer> getCustomerById(@PathVariable int id){
         return new ResponseEntity<>(customerService.getCustomerById(id),HttpStatus.OK);
     }
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public void addCustomer(@RequestBody Customer newCustomer){
         customerService.addCustomer(newCustomer);

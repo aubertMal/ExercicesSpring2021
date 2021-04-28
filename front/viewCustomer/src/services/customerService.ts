@@ -5,15 +5,13 @@ import { Customer } from "src/app/models/Customer";
 
 @Injectable()
 export class CustomerService{
-    customer = new Customer(1, 'Alex','37261');
-    customers : Customer[];
-        
+    customers : Customer[];      
 
     constructor(private httpClient : HttpClient){}
 
-    addCustomer() {
+    oldaddCustomer(newCustomer : Customer) {
         this.httpClient
-          .post('localhost:8080', this.customer)
+          .post('http://localhost:8080', newCustomer)
           .subscribe(
             () => {
               console.log('Enregistrement terminé !');
@@ -22,6 +20,10 @@ export class CustomerService{
               console.log('Erreur ! : ' + error);
             }
           );
+    }
+
+    addCustomer(newCustomer : Customer) : Observable<any> {
+        return this.httpClient.post('http://localhost:8080/customers', newCustomer);
     }
 
     getCustomers() : Observable <Customer[]>{
