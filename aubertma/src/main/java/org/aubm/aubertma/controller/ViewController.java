@@ -27,15 +27,19 @@ public class ViewController {
 
     @GetMapping("/showAddCustomer")
     public String showAddCustomer(Model model){
-        Customer newCustomer = new Customer(0,"","");
-        model.addAttribute("Customer",newCustomer);
-
+        model.addAttribute("Customer",new Customer(0," "," "));
         return "addCustomer";
     }
 
     @PostMapping("/addCustomer")
     public String addCustomer(Model model, @ModelAttribute("Customer") Customer newCustomer){
         customerService.addCustomer(new Customer(newCustomer.getId(), newCustomer.getName(), newCustomer.getCodeINSEE()));
+        return "redirect:/view";
+    }
+
+    @DeleteMapping("/removeCustomer/{id}")
+    public String removeCustomer (@PathVariable String id){
+        customerService.removeCustomer(Integer.parseInt(id));
         return "redirect:/view";
     }
 }

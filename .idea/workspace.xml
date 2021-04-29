@@ -7,6 +7,9 @@
     <list default="true" id="ed77654a-1aa5-44c4-bec1-924d4c96ce11" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aubertma/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aubertma/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aubertma/src/main/resources/templates/addCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/aubertma/src/main/resources/templates/addCustomer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aubertma/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/aubertma/src/main/resources/templates/view.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
         <option value="HTML File" />
       </list>
     </option>
@@ -119,7 +123,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -131,8 +147,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/aubertma/src/main/java/org/aubm/aubertma/controller/ViewController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="12" />
+          <line>35</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

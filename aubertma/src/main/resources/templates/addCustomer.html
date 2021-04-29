@@ -9,16 +9,24 @@
 
 <form th:action="@{/addCustomer}"
       th:object="${Customer}" method="POST">
-    Prénom:
-    <input type="text" th:field="*{name}" />
-    <br/>
-    Id:
-    <input type="text" th:field="*{id}" />
-    <br/>
-    CodeINSEE:
-    <input type="text" th:field="*{codeINSEE}" />
-    <br/>
-    <input type="submit" value="ajouter" />
+    <ul>
+        <li>
+            Id:
+            <input type="text" th:field="*{id}" />
+            <br/>
+        </li>
+        <li>
+            Prénom:
+            <input type="text" th:field="*{name}" />
+            <br/>
+        </li>
+        <li>
+            CodeINSEE:
+            <input type="text" th:field="*{codeINSEE}" />
+            <br/>
+        </li>
+        <input type="submit" value="ajouter" />
+    </ul>
 </form>
 
 <br/>

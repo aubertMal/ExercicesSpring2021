@@ -14,11 +14,18 @@
                 <th>Id</th>
                 <th>Prénom</th>
                 <th>CodeCommune</th>
+                <th>Ville</th>
+                <th>Supprimer</th>
             </tr>
             <tr th:each ="customer : ${customers}">
                 <td th:utext="${customer.id}">...</td>
                 <td th:utext="${customer.name}">...</td>
                 <td th:utext="${customer.codeINSEE}">...</td>
+                <td>
+                    <form action="#" th:action="@{http://localhost:8080/removeCustomer/} + ${{customer.id}}" th:method="delete">
+                        <button type="submit">SUPPRIMER</button>
+                    </form>
+                </td>
             </tr>
         </table>
     </div>
