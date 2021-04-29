@@ -1,32 +1,27 @@
 package org.aubm.aubertma.service;
 
+import org.aubm.aubertma.dao.CustomerRepository;
 import org.aubm.aubertma.entity.City;
 import org.aubm.aubertma.entity.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CustomerService {
 
-    private List<Customer> customerList= new ArrayList<>();
+    @Autowired
+    private CustomerRepository customerRepository;
 
     public List<Customer> getCustomers(){
 
-        return customerList;
+        return customerRepository.findAll();
     }
 
     public Customer getCustomerById(int id){
-        Customer customToReturn=null;
-        for (Customer custom:
-             customerList) {
-            if (custom.getId()==id)
-                customToReturn = custom;
-        }
-        return customToReturn;
+        return customerRepository.findById(id);
     }
 
     public void addCustomer(Customer newCustomer){
@@ -35,7 +30,7 @@ public class CustomerService {
         } catch (RestClientException e){
             System.out.println("La recherche n'a pas abouti!");
         }
-        customerList.add(newCustomer);
+        customerRepository.save(newCustomer);
     }
 
     public City getCity(String code){
@@ -47,22 +42,12 @@ public class CustomerService {
     }
 
     public void updateCustomer (int id, Customer newCustomer){
-        for (Customer custom:
-                customerList) {
-            if (custom.getId()==id) {
-                custom.setName(newCustomer.getName());
-                if (!newCustomer.getCodeINSEE().equals(custom.getCodeINSEE())) {
-                    try {
-                        custom.setCity(getCity(newCustomer.getCodeINSEE()).getNom());
-                    } catch (RestClientException e){
-                        System.out.println("La recherche n'a pas abouti!");
-                    }
-                }
-            }
-        }
+        Customer customer = customerRepository.findById(id);
+        if (customer != null)
+            customerRepository.save(customer);
     }
 
     public void removeCustomer (int id){
-        customerList.remove(getCustomerById(id));
+        customerRepository.deleteById(id);
     }
 }
